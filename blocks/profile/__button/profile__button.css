@@ -1,0 +1,27 @@
+.profile__button{
+    margin: 0 0 7px 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    align-self: end;
+    background-image: url(../../../images/pensil.svg);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 2px;
+    transition: opacity 0.7s;
+}
+.profile__button:hover{
+    opacity: 0.6;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+    .profile__button{
+        width: 18px;
+        height: 18px;
+        background-size: 5px;
+    }
+}
