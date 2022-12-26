@@ -1,0 +1,19 @@
+.popup__close-icon{
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    position: fixed;
+    bottom: 100%;
+    left: 100%;
+    transition: opacity 0.5s;
+}
+.popup__close-icon:hover{
+    cursor: pointer;
+    opacity: 0.25;
+}
+@media screen and (max-width: 550px) {
+    .popup__close-icon{
+        width: 20px;
+        transform: translate(-100%, -16px);
+    }
+}
