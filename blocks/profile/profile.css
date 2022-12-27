@@ -15,10 +15,9 @@
         width: calc(100% - 50px);
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .profile{
         width: calc(100% - 38px);
         flex-direction: column;
-        align-items: center;
     }
 }

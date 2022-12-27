@@ -1,7 +1,7 @@
 .header{
     margin: 0 auto;
     padding: 0;
-    width: 880px;
+    max-width: 880px;
 }
 .header:after{
     content: '';

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto</title>
+    <title>Место</title>
 </head>
 <body class="background">
     <div class="page">
@@ -13,75 +13,75 @@
             <img src="./images/logo.svg" alt="Логотип Место" class="header__logo">
         </header>
         <main class="content">
-            <section class="popup">
-                <form class="popup__container">
-                    <h2 class="popup__name">Редактировать профиль</h2>
+            <div class="popup">
+                <form class="popup__container" name="red-form">
+                    <button type="button" class="popup__close-icon"></button>
+                    <h3 class="popup__name">Редактировать профиль</h3>
                     <fieldset class="popup__form">
-                        <input type="text" class="popup__item popup__item_name" value="Жак-Ив Кусто">
-                        <input type="text" class="popup__item popup__item_job" value="Исследователь океана">
-                        <input type="submit" class="popup__button" value="Сохранить">
+                        <input type="text" name="firstname" class="popup__item popup__item_type_name" value="Жак-Ив Кусто">
+                        <input type="text" name="job" class="popup__item popup__item_type_job" value="Исследователь океана">
                     </fieldset>
-                    <img src="./images/Close-Icon.svg" alt="Закрыть" class="popup__close-icon">
+                    <input type="submit" class="popup__button" value="Сохранить">
                 </form>
-            </section>
+            </div>
             <section class="profile">
                 <img src="./images/Avatar.svg" alt="Фотопортрет" class="profile__avatar">
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__button"></button>
+                    <button type="button" class="profile__button"></button>
                     <p class="profile__description">Исследователь океана</p>
                 </div>
-                <button class="profile__add-button"></button>
+                <button type="button" class="profile__add-button"></button>
             </section>
             <section class="elements">
-                <figure class="element">
+                <article class="element">
                     <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Карачаевск</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
-                <figure class="element">
+                    <div class="element__text">
+                        <h2 class="element__description">Карачаевск</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+                <article class="element">
                     <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Гора эльбрус</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
-                <figure class="element">
+                    <div class="element__text">
+                        <h2 class="element__description">Гора эльбрус</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+                <article class="element">
                     <img src="./images/dombay.jpg" alt="Домбай" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Домбай</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
-                <figure class="element">
+                    <div class="element__text">
+                        <h2 class="element__description">Домбай</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+                <article class="element">
                     <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Гора эльбрус</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
-                <figure class="element">
+                    <div class="element__text">
+                        <h2 class="element__description">Гора эльбрус</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+                <article class="element">
                     <img src="./images/dombay.jpg" alt="Домбай" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Домбай</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
-                <figure class="element">
+                    <div class="element__text">
+                        <h2 class="element__description">Домбай</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+                <article class="element">
                     <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-                    <figcaption class="element__text">
-                        <p class="element__description">Карачаево-Черкессия</p>
-                        <img src="./images/white-like.svg" alt="Лайк" class="element__like">
-                    </figcaption>
-                </figure>
+                    <div class="element__text">
+                        <h2 class="element__description">Карачаево-Черкессия</h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
             </section>
-            <footer class="footer">
-                <p class="footer__text">&copy; 2020 Mesto Russia</p>
-            </footer>
         </main>
+        <footer class="footer">
+            <p class="footer__text">&copy; 2020 Mesto Russia</p>
+        </footer>
     </div>
-    <script src="./script/index.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

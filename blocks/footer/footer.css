@@ -1,5 +1,15 @@
 .footer{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    
+    width: calc(100% - 400px);
+}
+@media screen and (max-width:1200px) {
+    .footer{
+        width: calc(100% - 100px);
+    }
+}
+@media screen and (max-width: 350px) {
+    .footer{
+        width: calc(100% - 38px);
+    }
 }
