@@ -3,11 +3,11 @@
     padding: 0;
     max-width: 120px;
     height: 120px;
+    border-radius: 50%;
 }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .profile__avatar{
         padding-bottom: 26px;
+        grid-area: profile__avatar;
     }
-    
 }

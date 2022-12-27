@@ -9,14 +9,15 @@
     flex-grow: 5;
     position: relative;
 }
-
 @media screen and (max-width: 650px) {
     .profile__info{
         margin: 0 auto;
-        width: calc(100% - 74px);
-        grid-template-columns: auto;
         padding: 0 0 34px 0;
+        column-gap: 10px;
+        grid-template-columns: 1fr auto 1fr;
         justify-items: center;
-       
+        grid-template-areas:
+        ". profile__name profile__button"
+        " . profile__description .";
     }
 }

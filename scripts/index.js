@@ -2,10 +2,11 @@ let popupform = document.querySelector('.popup');
 let addButton = document.querySelector('.profile__button');
 let nameInput = document.querySelector('.popup__item_type_name');
 let jobInput = document.querySelector('.popup__item_type_job');
-let formElement = document.querySelector('.popup__container');
+let formElement = document.querySelector('.popup__form');
 let closeButton = document.querySelector('.popup__close-icon');
 let changeName = document.querySelector('.profile__name');
 let changeJob = document.querySelector('.profile__description');
+
 function addForm(){
     nameInput.value = changeName.textContent;
     jobInput.value = changeJob.textContent;
