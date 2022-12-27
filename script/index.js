@@ -23,5 +23,6 @@ function handleFormSubmit (evt) {
     let newJob = jobInput.value;    
     changeName.textContent = newName;
     changeJob.textContent = newJob;
+    popupform.classList.remove('popup__opened');
 }
 formElement.addEventListener('submit', handleFormSubmit); 
