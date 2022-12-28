@@ -9,7 +9,7 @@
     flex-grow: 5;
     position: relative;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
     .profile__info{
         margin: 0 auto;
         padding: 0 0 34px 0;
@@ -18,6 +18,6 @@
         justify-items: center;
         grid-template-areas:
         ". profile__name profile__button"
-        " . profile__description .";
+        " profile__description profile__description profile__description";
     }
 }
