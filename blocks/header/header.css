@@ -2,6 +2,8 @@
     margin: 0 auto;
     padding: 0;
     max-width: 880px;
+    flex-grow: 0;
+    width: 100%;
 }
 .header:after{
     content: '';

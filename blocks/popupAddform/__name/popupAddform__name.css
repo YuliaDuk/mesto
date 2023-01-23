@@ -1,0 +1,16 @@
+.popupAddform__name{
+    margin: 0;
+    padding: 34px 0 0 36px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+@media screen and (max-width: 550px) {
+    .popupAddform__name{
+        font-size: 18px;
+        line-height: 22px;
+        padding: 26px 0 0 22px;
+    }
+}

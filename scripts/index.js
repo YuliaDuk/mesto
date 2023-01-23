@@ -26,3 +26,15 @@ function handleFormSubmit (evt) {
     closeForm();
 }
 formElement.addEventListener('submit', handleFormSubmit); 
+
+const plusButton = document.querySelector('.profile__add-button');
+const escButton = document.querySelector('.popupAddform__close-icon');
+const newPic = document.querySelector('.popupAddform')
+function addPicture(){
+    newPic.classList.add('popupAddform_opened');
+}
+function closePicture(){
+    newPic.classList.remove('popupAddform_opened');
+}
+plusButton.addEventListener('click', addPicture);
+escButton.addEventListener('click', closePicture);
