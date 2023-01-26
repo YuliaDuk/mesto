@@ -23,56 +23,21 @@
                 </div>
                 <button type="button" class="profile__add-button"></button>
             </section>
-            <section class="elements">
-                <article class="element">
-                    <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Карачаевск</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
-                <article class="element">
-                    <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Гора эльбрус</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
-                <article class="element">
-                    <img src="./images/dombay.jpg" alt="Домбай" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Домбай</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
-                <article class="element">
-                    <img src="./images/elbrus.jpg" alt="Эльбрус" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Гора эльбрус</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
-                <article class="element">
-                    <img src="./images/dombay.jpg" alt="Домбай" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Домбай</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
-                <article class="element">
-                    <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-                    <button type="button" class="element__trash"></button>
-                    <div class="element__text">
-                        <h2 class="element__description">Карачаево-Черкессия</h2>
-                        <button type="button" class="element__like"></button>
-                    </div>
-                </article>
+            
+            <section class="elements"> 
             </section>
+
+            <template class="template">
+                <article class="element">
+                    <img src="" alt="" class="element__pic">
+                    <button type="button" class="element__trash"></button>
+                    <div class="element__text">
+                        <h2 class="element__description"></h2>
+                        <button type="button" class="element__like"></button>
+                    </div>
+                </article>
+            </template>
+
         </main>
         <footer class="footer">
             <p class="footer__text">&copy; 2020 Mesto Russia</p>
@@ -94,10 +59,18 @@
                 <h3 class="popup__name popup__name_type_add">Новое место</h3>
                 <form class="popup__form popup__form_type_add" name="add-form">
                     <input type="text" name="placename" class="popup__item popup__item_type_add popup__item_el_place" placeholder="Название">
-                    <input type="text" name="srcphoto" class="popup__item popup__item_type_add popup__item_el_src" placeholder="Ссылка на картинку">
+                    <input type="url" name="srcphoto" class="popup__item popup__item_type_add popup__item_el_src" placeholder="Ссылка на картинку">
                     <input type="submit" class="popup__button" value="Создать">
                 </form>
             </div>
+        </div>
+        <div class="popup popup_type_preview">
+            <div class="popup__container popup__container_type_preview">
+                <img src="" alt="" class="popup__img">
+                <button type="button" class="popup__close-icon"></button>
+                <h3 class="popup__preview-name"></h3>
+            </div>
+            
         </div>
     </div>
     <script src="./scripts/index.js"></script>
