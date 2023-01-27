@@ -8,3 +8,6 @@
     object-position: top left;
     display: block;
 }
+.element__pic:hover{
+    cursor: pointer;
+}
