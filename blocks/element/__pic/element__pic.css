@@ -7,6 +7,8 @@
     object-fit: cover;
     object-position: top left;
     display: block;
+    color: white;
+    background-color: black;
 }
 .element__pic:hover{
     cursor: pointer;
