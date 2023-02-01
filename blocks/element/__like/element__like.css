@@ -15,7 +15,9 @@
    background-image: url(../../../images/like.svg);
    opacity: 1;
 }
-.element__like:hover{
-    opacity: 0.5;
-    cursor: pointer;
+@media (hover){
+    .element__like:hover{
+        opacity: 0.5;
+        cursor: pointer;
+}
 }
