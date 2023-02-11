@@ -24,7 +24,7 @@ const previewImg = document.querySelector('.popup__img');
 const elementsContainer = document.querySelector('.elements');
 //переменные для template
 const photoTemplate = document.querySelector('.template').content;
-const card = photoTemplate.querySelector('.element'); //перменная используется в функции createElement
+const card = photoTemplate.querySelector('.element'); 
 //открытие и закрытие попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -38,9 +38,9 @@ function closePopup(popup) {
 }
 //открытие формы редактирования профиля
 function openPopupForm(){
-    nameInput.value = changeName.textContent;
-    jobInput.value = changeJob.textContent;
-    openPopup(popupEdit);
+  nameInput.value = changeName.textContent;
+  jobInput.value = changeJob.textContent;
+  openPopup(popupEdit);
 }
 popupEditOpenButton.addEventListener('click', openPopupForm);
 
@@ -55,7 +55,6 @@ formEdit.addEventListener('submit', handleFormEdit);
 
 //открытие формы добавления карточек
 function openAddForm(){
-    formAddCard.reset();
     openPopup(popupAddCard);
 }
 popupAddCardOpenButton.addEventListener('click', openAddForm);
@@ -114,7 +113,6 @@ function addCard(evt){
 };
 popupAddCard.addEventListener('submit', addCard);
 
-
 // закрытие по Esc
 function closeByEsc(evt){
   if (evt.key === 'Escape'){
@@ -130,4 +128,3 @@ function closePreviewFormByOverlay (evt){
     closePopup(openedPopup);
   };
 };
-
