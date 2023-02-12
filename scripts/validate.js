@@ -1,5 +1,5 @@
 
-function isValid(formElement, inputElement){
+function isValid(options, formElement, inputElement){
   if (!inputElement.validity.valid){
       showInputError(options, formElement, inputElement, inputElement.validationMessage);
   } else {
@@ -23,7 +23,7 @@ const setEventListeners = (options, formElement) => {
   toggleButtonState(options, inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
-      isValid(formElement, inputElement);
+      isValid(options, formElement, inputElement);
       toggleButtonState(options, inputList, buttonElement);
     });
   });
@@ -43,15 +43,6 @@ const options = {formSelector: '.popup__form',
   errorClass: 'popup__error_visible'
 };
 enableValidation(options); 
-
-popupEditOpenButton.addEventListener('click', () => {
-  const inputList = Array.from(formEdit.querySelectorAll('.popup__item'));
-  const buttonElement = formEdit.querySelector('.popup__button');
-  toggleButtonState(options, inputList, buttonElement);
-  inputList.forEach((inputElement) => {
-    isValid(formEdit, inputElement);
-  })
-})
   
 function hasInvalidInpit (inputList) {
   return inputList.some((inputElement) => {

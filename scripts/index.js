@@ -110,6 +110,8 @@ function addCard(evt){
   drawElement(createElement(cardnewSrc, cardNewPlace));
   closePopup(popupAddCard);
   evt.target.reset();
+  evt.submitter.classList.add('popup__button_inactive')
+  evt.submitter.disabled = true; 
 };
 popupAddCard.addEventListener('submit', addCard);
 
