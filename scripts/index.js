@@ -93,16 +93,19 @@ popups.forEach((popup) =>{
 });
 //валидация
 function validationFunction (formName) {
-  const checkResult = new FormValidator(options, formName).enableValidation();
+  const checkResult = new FormValidator(options, formName);
   return checkResult;
 }
-validationFunction(formEdit);
-validationFunction(formAdd);
+validationFunction(formEdit).enableValidation();
+validationFunction(formAdd).enableValidation();
 //отрисовка карточек
-function renderElements(object){
+function prependCard(photoElement){
+  elementsContainer.prepend(photoElement);
+}
+function renderElement(object){
   const photo = new Card(object, '.template', handleOpenPopup);
   const photoElement = photo.generateCard();
-  elementsContainer.prepend(photoElement);
+  prependCard(photoElement);
 }
 //добавление через форму
 function addCard(evt){
@@ -114,12 +117,13 @@ function addCard(evt){
   return inputobj
 };
 popupAddCard.addEventListener('submit', (evt) => {
-  renderElements(addCard(evt));
+  renderElement(addCard(evt));
   closePopup(popupAddCard);
+  validationFunction(formAdd).disableButtonState();
   evt.target.reset();
-  new FormValidator(options, popupAddCard).disableButtonState();
+  
 });
 //добавление первых 6 карточек
 initialCards.forEach((item) => {
-  renderElements(item)
+  renderElement(item)
 })
