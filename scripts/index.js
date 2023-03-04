@@ -99,13 +99,14 @@ function validationFunction (formName) {
 validationFunction(formEdit).enableValidation();
 validationFunction(formAdd).enableValidation();
 //отрисовка карточек
-function prependCard(photoElement){
-  elementsContainer.prepend(photoElement);
-}
-function renderElement(object){
+
+function createCard(object){
   const photo = new Card(object, '.template', handleOpenPopup);
   const photoElement = photo.generateCard();
-  prependCard(photoElement);
+  return photoElement;
+}
+function renderElement(photoElement){
+  elementsContainer.prepend(createCard(photoElement));
 }
 //добавление через форму
 function addCard(evt){
