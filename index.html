@@ -56,9 +56,9 @@
                 <button type="button" class="popup__close-icon" aria-label="Удалить"></button>
                 <h3 class="popup__name popup__name_type_add">Новое место</h3>
                 <form class="popup__form popup__form_type_add" name="add-form" novalidate>
-                    <input id="placename-input" type="text" name="placename" class="popup__item popup__item_type_add popup__item_el_place" minlength="2" maxlength="30" placeholder="Название" required>
+                    <input id="placename-input" type="text" name="name" class="popup__item popup__item_type_add popup__item_el_place" minlength="2" maxlength="30" placeholder="Название" required>
                     <span class="placename-input-error popup__item-error"></span>
-                    <input id="src-input" type="url" name="srcphoto" class="popup__item popup__item_type_add popup__item_el_src" placeholder="Ссылка на картинку" required>
+                    <input id="src-input" type="url" name="link" class="popup__item popup__item_type_add popup__item_el_src" placeholder="Ссылка на картинку" required>
                     <span class="src-input-error popup__item-error"></span>
                     <button type="submit" class="popup__button">Создать</button>
                 </form>
@@ -72,6 +72,6 @@
             </div>
         </div>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./pages/index.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-export class Card {
-    constructor(data, templateSelector, handleOpenPopup){
+export default class Card {
+    constructor({data, handleCardClick }, templateSelector){
       this._templateSelector = templateSelector;
       this._link = data.link;
       this._name = data.name;
-      this._handleOpenPopup = handleOpenPopup;
+      this._handleOpenPopup = handleCardClick;
     }
     _getTemplate(){
       const cardElement = document.querySelector(this._templateSelector).content.querySelector('.element').cloneNode(true);
