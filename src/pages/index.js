@@ -36,11 +36,7 @@ const formEditValidate = new FormValidator(options, formEdit);
 formEditValidate.enableValidation();
 
 //карточки
-// function createNewPopupWithImage(item){
-//   const newCard = new PopupWithImage( '.popup_type_preview');
-//     newCard.open(item);
-//     newCard.setEventListeners();
-// }
+
 const newPopupWithImage = new PopupWithImage('.popup_type_preview');
 newPopupWithImage.setEventListeners();
 
@@ -64,9 +60,6 @@ const newSection = new Section({
     newSection.addItem(createCardWithImage(initialCards).generateCard())
   }}, elementsContainer)
   newSection.renderItems();
-
-
-
 
 const formAddValidate = new FormValidator(options, formAdd);
 formAddValidate.enableValidation();
