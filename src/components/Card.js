@@ -9,16 +9,25 @@ export default class Card {
       const cardElement = document.querySelector(this._templateSelector).content.querySelector('.element').cloneNode(true);
       return cardElement;
     }
+    _toggleLike(evt){
+      evt.target.classList.toggle('element__like_active');
+    }
+    _deleteCard(){
+      this._element.remove();
+      this._element = null;
+    }
+    __handleImageClick(){
+      this._handleOpenPopup(this._link, this._name);
+    }
     _setEventListeners(){
       this._popupImg.addEventListener('click', () => {
-        this._handleOpenPopup(this._link, this._name);
+        this.__handleImageClick();
       })
-      this._element.querySelector('.element__like').addEventListener('click', (evt) => {
-        evt.target.classList.toggle('element__like_active');
+      this._element.querySelector('.element__like').addEventListener('click', () => {
+        this._toggleLike();
       })
       this._element.querySelector('.element__trash').addEventListener('click', () => {
-        this._element.remove();
-        this._element = null;
+        this._deleteCard();
       })
     }
     generateCard() {

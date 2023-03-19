@@ -36,35 +36,37 @@ const formEditValidate = new FormValidator(options, formEdit);
 formEditValidate.enableValidation();
 
 //карточки
-function createNewPopupWithImage(item){
-  const newCard = new PopupWithImage(item, '.popup_type_preview');
-    newCard.open();
-    newCard.setEventListeners();
-}
-function createCardWithImage (item) {
-  return new Card({data: item, handleCardClick: ()=>{createNewPopupWithImage(item)}}, '.template')
-}
-function createNewSection (item) {
-  const firstCards = new Section ({
-    item: item,
-    renderer: (item) =>{firstCards.addItem(createCardWithImage(item).generateCard())}
-  }, elementsContainer)
-  firstCards.renderItems();
-}
-
-initialCards.forEach((item)=>{
-  createNewSection(item);
-})
+// function createNewPopupWithImage(item){
+//   const newCard = new PopupWithImage( '.popup_type_preview');
+//     newCard.open(item);
+//     newCard.setEventListeners();
+// }
+const newPopupWithImage = new PopupWithImage('.popup_type_preview');
+newPopupWithImage.setEventListeners();
 
 const newAddedCard = new PopupWithForm({selector: '.popup_type_add', 
 handleFormEdit: (item) =>{
-  createNewSection(item)
+  newSection.addItem(createCardWithImage(item).generateCard());
   formAddValidate.disableButtonState();
 }});
 newAddedCard.setEventListeners();
 popupAddCardOpenButton.addEventListener('click', ()=>{
   newAddedCard.open();
 });
+
+function createCardWithImage (item) {
+  return new Card({data: item, handleCardClick: ()=>{newPopupWithImage.open(item)}}, '.template')
+}
+
+const newSection = new Section({
+  items: initialCards,
+  renderer: (initialCards) =>{
+    newSection.addItem(createCardWithImage(initialCards).generateCard())
+  }}, elementsContainer)
+  newSection.renderItems();
+
+
+
 
 const formAddValidate = new FormValidator(options, formAdd);
 formAddValidate.enableValidation();
