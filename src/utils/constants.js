@@ -6,7 +6,7 @@ const holmogorsk = new URL('../images/kholmogorsky-rayon.jpg', import.meta.url);
 const baikal = new URL('../images/baikal.jpg', import.meta.url);
 
 export const initialCards = [
-    { name: 'Архыз', link: arkhys},
+    { name: 'Архыз', link: ''},
     { name: 'Челябинская область', link: chelyabinskRegion },
     { name: 'Иваново', link: ivanov },
     { name: 'Камчатка', link: kamchatka },
@@ -27,7 +27,9 @@ export const nameInput = document.querySelector('.popup__item_el_name');
 export const jobInput = document.querySelector('.popup__item_el_job');
 export const formEdit = document.querySelector('.popup__form_type_red');
 export const formAdd = document.querySelector('.popup__form_type_add');
+export const formImg = document.querySelector('.popup__form_type_imgred')
 export const objectProfileEdit = {
   firstname: '.profile__name',
   job: '.profile__description'
 }
+export const imgEdit = document.querySelector('.profile__img-button')

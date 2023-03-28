@@ -14,9 +14,28 @@ nameInput,
 jobInput,
 formEdit,
 formAdd,
-objectProfileEdit
+formImg,
+objectProfileEdit,
+imgEdit
 } from "../utils/constants.js";
 
+// //запросы на сервер
+// function newinit(){
+const initcard = [{},{},{}]
+fetch('https://mesto.nomoreparties.co/v1/cohort-63/cards', {
+    headers: {
+      authorization: '56a6b55a-fd33-4c3c-8624-42a430500012'
+    }
+  })
+  .then(res => res.json())
+  .then((res)=>{
+    // console.log(res)
+    for (let i = 0; i<3; i++){
+      initcard[i].link = res[i].link;
+      initcard[i].name = res[i].name
+    }
+  })
+console.log(initcard)
 //форма профиля
 const newUserInfo = new UserInfo(objectProfileEdit)
 const newProfileForm = new PopupWithForm({selector: '.popup_type_red',
@@ -35,6 +54,28 @@ popupEditOpenButton.addEventListener('click', ()=>{
 const formEditValidate = new FormValidator(options, formEdit);
 formEditValidate.enableValidation();
 
+//фото профиля
+
+const newImgForm = new PopupWithForm({selector: '.popup_type_imgred',
+handleFormEdit:()=>{
+
+}});
+newImgForm.setEventListeners();
+imgEdit.addEventListener('click', ()=>{
+  newImgForm.open();
+})
+const formImgValidate = new FormValidator(options, formImg);
+formImgValidate.enableValidation();
+
+//подтверждение удаления
+
+const newConfirm = new PopupWithForm({selector: '.popup_type_confirm',
+handleFormEdit: ()=>{
+
+}});
+newConfirm.setEventListeners();
+
+
 //карточки
 
 const newPopupWithImage = new PopupWithImage('.popup_type_preview');
@@ -42,7 +83,7 @@ newPopupWithImage.setEventListeners();
 
 const newAddedCard = new PopupWithForm({selector: '.popup_type_add', 
 handleFormEdit: (item) =>{
-  newSection.addItem(createCardWithImage(item).generateCard());
+  newSection.addItem(createCardWithImage(item));
   formAddValidate.disableButtonState();
 }});
 newAddedCard.setEventListeners();
@@ -51,16 +92,15 @@ popupAddCardOpenButton.addEventListener('click', ()=>{
 });
 
 function createCardWithImage (item) {
-  return new Card({data: item, handleCardClick: ()=>{newPopupWithImage.open(item)}}, '.template')
+  return new Card( item,  ()=>{newPopupWithImage.open(item)}, '.template').generateCard();
 }
 
-const newSection = new Section({
-  items: initialCards,
-  renderer: (initialCards) =>{
-    newSection.addItem(createCardWithImage(initialCards).generateCard())
-  }}, elementsContainer)
-  newSection.renderItems();
+const newSection = new Section(initcard, createCardWithImage, elementsContainer)
+ newSection.renderItems();
 
 const formAddValidate = new FormValidator(options, formAdd);
 formAddValidate.enableValidation();
+
+
+   
 
