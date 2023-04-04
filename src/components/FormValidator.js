@@ -8,6 +8,7 @@ export default class FormValidator {
     this._formName = formName;
     this._buttonElement = this._formName.querySelector(this._submitButtonSelector);
     this._inputList = Array.from(this._formName.querySelectorAll(this._inputSelector));
+    
   }
   _hideInputError(input){
     const errorElement = this._formName.querySelector(`.${input.id}-error`);
@@ -54,5 +55,11 @@ export default class FormValidator {
   }
   enableValidation(){
     this._setEventListeners();
+  }
+  deleteSpanErrors(){
+    this._inputList.forEach((input)=>{
+      this._hideInputError(input);
+    })
+
   }
 }

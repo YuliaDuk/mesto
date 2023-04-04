@@ -4,16 +4,16 @@ export default class Api {
         this._headers = headers;
     }
     getCards(){
-        return fetch(`${this._baseUrl}/cards`, {
+         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers
         })
-        .then(res => res.json())
+        .then(this._getResponseData)
     }
     getProfileInfo(){
         return fetch(`${this._baseUrl}/users/me`,{
             headers: this._headers
         })
-        .then(res => res.json())
+        .then(this._getResponseData)
     }
     redProfile({firstname, job}){
        return fetch(`${this._baseUrl}/users/me`,{
@@ -50,23 +50,29 @@ export default class Api {
             method: 'PUT',
             headers: this._headers,
         })
-        .then(res => res.json())
+        .then(this._getResponseData)
     }
     _removeLikes(cardId){
         return fetch(`${this._baseUrl}/cards/${cardId}/likes`,{
             method: 'DELETE',
             headers: this._headers,
         })
-        .then(res => res.json())
+        .then(this._getResponseData)
     }
     deleteCard(cardId){
         return fetch (`${this._baseUrl}/cards/${cardId}`,{
             method: 'DELETE',
             headers: this._headers,
         })
-        .then(res => res.json())
+        .then(this._getResponseData)
     }
     toggleApiLikes(isLiked, cardId){
         return isLiked ? this._removeLikes(cardId) : this._addLikes(cardId)
     }
+    _getResponseData(res) {
+        if (!res.ok) {
+            return Promise.reject(`Ошибка: ${res.status}`) 
+        }
+        return res.json()
+    } 
 }

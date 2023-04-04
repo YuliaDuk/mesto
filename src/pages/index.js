@@ -55,8 +55,10 @@ const newProfileForm = new PopupWithForm({
 selector: '.popup_type_red', 
 handleFormEdit: (object) =>{
   renderLoading(true, '.popup_type_red', 'Сохранить');
-  newUserInfo.setUserInfo(object);
   api.redProfile(object)
+  .then(()=>{
+    newUserInfo.setUserInfo(object);
+  })
   .finally(()=>{
     renderLoading(false, '.popup_type_red', 'Сохранить');
   })
@@ -67,12 +69,13 @@ handleFormEdit: (object) =>{
 newProfileForm.setEventListeners();
 
 //подставляем данные из полей в форму
-popupEditOpenButton.addEventListener('click', ()=>{ 
+function renderNewProfileData(){
   const profileResults = newUserInfo.getUserInfo();
   newProfileForm.open();
   nameInput.value = profileResults.name;
   jobInput.value = profileResults.description;
-})
+}
+popupEditOpenButton.addEventListener('click', renderNewProfileData)
 
 //фото профиля
 const newImgForm = new PopupWithForm({
@@ -80,8 +83,10 @@ selector: '.popup_type_imgred',
 handleFormEdit:(object)=>{
   formImgValidate.disableButtonState();
   renderLoading(true, '.popup_type_imgred', 'Сохранить');
-  newUserInfo.setNewImg(object);
   api.redImgProfile(object)
+  .then(()=>{
+    newUserInfo.setNewImg(object);
+  })
   .catch((err)=>{
     console.log(`Ошибка: ${err}`)
   })
@@ -90,9 +95,11 @@ handleFormEdit:(object)=>{
   })
 }});
 newImgForm.setEventListeners();
-imgEdit.addEventListener('click', ()=>{
+function openImgEditForm(){
+  formImgValidate.deleteSpanErrors();
   newImgForm.open();
-})
+}
+imgEdit.addEventListener('click', openImgEditForm)
 
 
 //карточки
@@ -141,9 +148,12 @@ handleFormEdit: (item) =>{
     })
  }})
 newAddedCard.setEventListeners();
-popupAddCardOpenButton.addEventListener('click', ()=>{
+
+function openFormAddNewCard(){
+  formAddValidate.deleteSpanErrors();
   newAddedCard.open();
-});
+}
+popupAddCardOpenButton.addEventListener('click', openFormAddNewCard);
 
 
 //валидация
