@@ -1,18 +1,3 @@
-const arkhys = new URL('../images/arkhyz.jpg', import.meta.url);
-const chelyabinskRegion = new URL('../images/chelyabinsk-oblast.jpg', import.meta.url);
-const ivanov = new URL('../images/ivanovo.jpg', import.meta.url);
-const kamchatka = new URL('../images/kamchatka.jpg', import.meta.url);
-const holmogorsk = new URL('../images/kholmogorsky-rayon.jpg', import.meta.url);
-const baikal = new URL('../images/baikal.jpg', import.meta.url);
-
-export const initialCards = [
-    { name: 'Архыз', link: ''},
-    { name: 'Челябинская область', link: chelyabinskRegion },
-    { name: 'Иваново', link: ivanov },
-    { name: 'Камчатка', link: kamchatka },
-    { name: 'Холмогорский район', link: holmogorsk },
-    { name: 'Байкал', link: baikal }
-  ]; 
 export const options = {formSelector: '.popup__form',
   inputSelector: '.popup__item',
   submitButtonSelector: '.popup__button',
@@ -30,6 +15,7 @@ export const formAdd = document.querySelector('.popup__form_type_add');
 export const formImg = document.querySelector('.popup__form_type_imgred')
 export const objectProfileEdit = {
   firstname: '.profile__name',
-  job: '.profile__description'
+  job: '.profile__description',
+  newimg: '.profile__avatar'
 }
-export const imgEdit = document.querySelector('.profile__img-button')
+export const imgEdit = document.querySelector('.profile__img-button');

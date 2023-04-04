@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<%=require('./images/favicon.png')%>" type="image/x-icon">
     <title>Место</title>
 </head>
 <body class="background">
@@ -13,11 +14,11 @@
         </header>
         <main class="content"> 
             <section class="profile">
-                <button type="button" class="profile__img-button" aria-label="Редактировать"><img src="<%=require('./images/Avatar.svg')%>" alt="Фотопортрет" class="profile__avatar"></button>
+                <button type="button" class="profile__img-button" aria-label="Редактировать"><img src="#" alt="Аватар" class="profile__avatar"></button>
                 <div class="profile__info">
-                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <h1 class="profile__name"></h1>
                     <button type="button" class="profile__button" aria-label="Редактировать"></button>
-                    <p class="profile__description">Исследователь океана</p>
+                    <p class="profile__description"></p>
                 </div>
                 <button type="button" class="profile__add-button" aria-label="Добавить"></button>
             </section>
@@ -29,7 +30,11 @@
                     <button type="button" class="element__trash" aria-label="Удалить"></button>
                     <div class="element__text">
                         <h2 class="element__description"></h2>
-                        <button type="button" class="element__like" aria-label="Лайк"></button>
+                        <div class="element__likes">
+                            <button type="button" class="element__like" aria-label="Лайк"></button>
+                            <p class="element__qty-like">0</p>
+                        </div>
+                        
                     </div>
                 </article>
             </template>
