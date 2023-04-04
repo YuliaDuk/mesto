@@ -58,6 +58,7 @@ handleFormEdit: (object) =>{
   api.redProfile(object)
   .then(()=>{
     newUserInfo.setUserInfo(object);
+    newProfileForm.close()
   })
   .finally(()=>{
     renderLoading(false, '.popup_type_red', 'Сохранить');
@@ -86,6 +87,7 @@ handleFormEdit:(object)=>{
   api.redImgProfile(object)
   .then(()=>{
     newUserInfo.setNewImg(object);
+    newImgForm.close();
   })
   .catch((err)=>{
     console.log(`Ошибка: ${err}`)
@@ -109,6 +111,7 @@ function handleDelClick(card){
     api.deleteCard(card._id)
     .then(()=>{
       card.deleteCardFromPage();
+      newPopupWithSubmit.close();
     })
     .catch((err)=>{
       console.log(`Ошибка: ${err}`)
@@ -139,6 +142,7 @@ handleFormEdit: (item) =>{
   api.addNewCard(item)
     .then((res)=>{
       newSection.addItem(createCardWithImage(res, res.owner._id));
+      newAddedCard.close();
     })
     .catch((err)=>{
       console.log(`Ошибка: ${err}`)
